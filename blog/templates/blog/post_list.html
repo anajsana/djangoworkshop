@@ -6,8 +6,6 @@
         <div>
             <h1><a href="/">Ana's Blog</a></h1>
         </div>
-
-        <div>
             <p>published: 10.2020, 18:50</p>
             <h2><a href="">My first post</a></h2>
             <p> This is my first experience using Django. It rocks!</p>
@@ -18,5 +16,13 @@
             <h2><a href="">My second post</a></h2>
             <p>I'm super exited to keep learning new things with Django</p>
         </div>
+        {% for post in posts %}
+        <div>
+            <p> publicado: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
+    <div>
     </body>
 </html>
